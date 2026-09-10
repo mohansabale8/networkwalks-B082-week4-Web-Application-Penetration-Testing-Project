@@ -114,10 +114,9 @@ Reconnaissance was used to establish an initial understanding of the target envi
 ```bash
 whois medirozahospital.com
 ```
-
 Whois enumeration was used to identify publicly available domain and registration information.
 
-(whois.png)
+rec&fot/whois.png
 
 ## 🌎 1.2 DNS Reconnaissance
 
@@ -128,8 +127,6 @@ nslookup medirozahospital.com
 
 DNS reconnaissance was used to identify DNS records, name servers, resolved addresses, and other publicly exposed DNS information.
 
-rec&fot/dig.png
-rec&fot/nslook.png
 ## 🕵️ 1.3 Technology Fingerprinting
 
 ```bash
@@ -225,7 +222,7 @@ Protected Material → Identify Hash/Format → Hash Calculator → Password Cra
 
 The patient portal exposed a list of password-protected lab report PDFs available for download:
 
-![List of password-protected lab reports](password/accessed-files.png)
+![List of password-protected lab reports](passwordSS/access.png)
 
 ## 7.3 Password Cracker — Dictionary Attack Results
 
@@ -233,25 +230,25 @@ Each PDF's `$pdf$` hash was extracted and run through a dictionary attack. All t
 
 **Report 1 — cracked password: `123456`**
 
-![First password cracked - 123456](password/first-password.png)
+![First password cracked - 123456](passwordSS/rep1pass.png)
 
 **Report 2 — cracked password: `password`**
 
-![Second password cracked - password](password/second-password.png)
+![Second password cracked - password](passwordSS/rep2pass.png)
 
 **Report 3 — cracked password: `!@#$%^&`**
 
-![Third password cracked - special characters](/password/third-password.png)
+![Third password cracked - special characters](passwordSS/rep3pass.png)
 
 ## 7.4 Verification — Decrypted Reports
 
 The recovered passwords successfully unlocked the corresponding PDFs, confirming the weakness. These reports contained confidential patient health information:
 
-![Cracked pathology report - Sipho Dlamini](/password/cracked-pdf-1.png)
+![Cracked pathology report - Sipho Dlamini](passwordSS/rep1.png)
 
-![Cracked pathology report - Emily Thompson (1)](/password/cracked-pdf-2.png)
+![Cracked pathology report - Priya Reddy (1)](passwordSS/rep2.png)
 
-![Cracked pathology report - Emily Thompson (2)](/password/cracked-pdf-3.png)
+![Cracked pathology report - Emily Thompson (2)](passwordSS/rep3.png)
 
 > 🔒 **These reports contain real-format patient health information (names, DOB, results). Redact patient-identifying fields before publishing this repository publicly.**
 
@@ -265,11 +262,11 @@ During reconnaissance, `curl` was used to inspect the website and its accessible
 
 **Shareholders table dump:**
 
-![Shareholders table dump](sqli/shareholders-table.png)
+![Shareholders table dump](dataSS/dat.png)
 
 **Staff table dump** — note this table exposed staff national ID numbers and salaries in plaintext, which significantly raises the severity of this finding:
 
-![Staff table dump](sqli/staff-table.png)
+![Staff table dump](dataSS/data.png)
 
 > 🔒 **These tables contain PII (national ID numbers) and confidential HR data (salaries, share ownership). Redact these fields before publishing this repository publicly, or replace the screenshots with cropped/blurred versions.**
 
@@ -358,18 +355,30 @@ Detailed technical errors should remain in server-side logs.
 
 ```text
 screenshots/
-├── sqli/
-│   ├── shareholders-table.png
-│   └── staff-table.png
+├── dataSS/
+│   ├── db1.png
+│   ├── db2.png
+│   ├── olddata.png
+│   └── patidata.png
 │
-└── password/
-    ├── accessed-files.png
-    ├── first-password.png
-    ├── second-password.png
-    ├── third-password.png
-    ├── cracked-pdf-1.png
-    ├── cracked-pdf-2.png
-    └── cracked-pdf-3.png
+├── passwordSS/
+│   ├── access.png
+│   ├── rep1.png
+│   ├── rep1pass.png
+│   ├── rep2.png
+│   ├── rep2pass.png
+│   ├── rep3.png
+│   └── rep3pass.png
+│
+└── rec&fot/
+    ├── alert.png
+    ├── auth.png
+    ├── curl.png
+    ├── dig.png
+    ├── nslook.png
+    ├── robo.png
+    └── waf.png
+
 ```
 
 ---
