@@ -25,6 +25,7 @@ The assessment followed a structured security-testing methodology covering:
 🔧 Remediation recommendations
 > ⚠️ **Testing was performed only within the authorized internship assessment scope, against a lab/training target.**
 ---
+
 🎯 Objectives
 The main objectives of this assessment were to:
 Understand the target application's external attack surface
