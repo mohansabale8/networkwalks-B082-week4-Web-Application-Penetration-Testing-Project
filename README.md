@@ -117,7 +117,7 @@ whois medirozahospital.com
 
 Whois enumeration was used to identify publicly available domain and registration information.
 
-rec&fot/whois.png
+(whois.png)
 
 ## 🌎 1.2 DNS Reconnaissance
 
