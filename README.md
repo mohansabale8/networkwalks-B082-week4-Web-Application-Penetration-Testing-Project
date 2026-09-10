@@ -9,7 +9,6 @@
   <b>Cybersecurity Internship — Week 4 Project</b><br>
   Web Application Security Assessment
 </p>
-
 ---
 📌 Project Overview
 This repository documents my Week 4 cybersecurity internship project focused on web application penetration testing.
@@ -23,9 +22,8 @@ The assessment followed a structured security-testing methodology covering:
 📸 Evidence collection
 🛡️ Risk analysis
 🔧 Remediation recommendations
-> ⚠️ **Testing was performed only within the authorized internship assessment scope, against a lab/training target.**
+> ⚠️ \\\\\\\*\\\\\\\*Testing was performed only within the authorized internship assessment scope, against a lab/training target.\\\\\\\*\\\\\\\*
 ---
-
 🎯 Objectives
 The main objectives of this assessment were to:
 Understand the target application's external attack surface
@@ -48,7 +46,7 @@ Tool	Purpose
 🕵️ `WhatWeb`	Web technology fingerprinting
 🧱 `WAFW00F`	WAF detection
 🔐 Network Walks Password Cracker	Dictionary-attack password recovery for encrypted PDFs
-#️⃣ Hash Calculator	PDF hash ($pdf$) extraction for cracking
+##️⃣ Hash Calculator	PDF hash ($pdf$) extraction for cracking
 🗄️ MySQL / `mysqldump`	Database enumeration and data-exposure evidence
 🌐 Web Browser	Application testing and verification
 ---
@@ -122,7 +120,7 @@ After the initial reconnaissance phase, application functionality was reviewed t
 The patient login functionality was manually assessed for improper handling of user-controlled input.
 During testing, an unexpected single quote was entered into the username field. The application returned a database-related error:
 ```text
-Warning: mysqli_query(): You have an error in your SQL syntax;
+Warning: mysqli\\\\\\\_query(): You have an error in your SQL syntax;
 check the manual that corresponds to your MySQL server version
 for the right syntax to use near ''' at line 1
 ```
@@ -159,14 +157,14 @@ Report 1 — cracked password: `123456`
 ![First password cracked - 123456](password/first-password.png)
 Report 2 — cracked password: `password`
 ![Second password cracked - password](password/second-password.png)
-Report 3 — cracked password: `!@#$%^&`
+Report 3 — cracked password: `!@#$%^\\\\\\\&`
 ![Third password cracked - special characters](/password/third-password.png)
 7.4 Verification — Decrypted Reports
 The recovered passwords successfully unlocked the corresponding PDFs, confirming the weakness. These reports contained confidential patient health information:
 ![Cracked pathology report - Sipho Dlamini](/password/cracked-pdf-1.png)
 ![Cracked pathology report - Emily Thompson (1)](/password/cracked-pdf-2.png)
 ![Cracked pathology report - Emily Thompson (2)](/password/cracked-pdf-3.png)
-> 🔒 **These reports contain real-format patient health information (names, DOB, results). Redact patient-identifying fields before publishing this repository publicly.**
+> 🔒 \\\\\\\*\\\\\\\*These reports contain real-format patient health information (names, DOB, results). Redact patient-identifying fields before publishing this repository publicly.\\\\\\\*\\\\\\\*
 ---
 🗄️ Backup Database Discovery
 During reconnaissance, `curl` was used to inspect the website and its accessible directories. Further enumeration revealed an old `/old/` directory containing an exposed database backup. Examining the backup revealed the application's database structure and helped identify tables and fields related to the application.
@@ -175,7 +173,7 @@ Shareholders table dump:
 ![Shareholders table dump](sqli/shareholders-table.png)
 Staff table dump — note this table exposed staff national ID numbers and salaries in plaintext, which significantly raises the severity of this finding:
 ![Staff table dump](sqli/staff-table.png)
-> 🔒 **These tables contain PII (national ID numbers) and confidential HR data (salaries, share ownership). Redact these fields before publishing this repository publicly, or replace the screenshots with cropped/blurred versions.**
+> 🔒 \\\\\\\*\\\\\\\*These tables contain PII (national ID numbers) and confidential HR data (salaries, share ownership). Redact these fields before publishing this repository publicly, or replace the screenshots with cropped/blurred versions.\\\\\\\*\\\\\\\*
 ---
 
 📊 08 — Findings Summary
