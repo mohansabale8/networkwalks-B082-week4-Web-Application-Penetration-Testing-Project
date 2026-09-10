@@ -117,6 +117,8 @@ whois medirozahospital.com
 
 Whois enumeration was used to identify publicly available domain and registration information.
 
+rec&fot/whois.png
+
 ## 🌎 1.2 DNS Reconnaissance
 
 ```bash
@@ -126,6 +128,8 @@ nslookup medirozahospital.com
 
 DNS reconnaissance was used to identify DNS records, name servers, resolved addresses, and other publicly exposed DNS information.
 
+rec&fot/dig.png
+rec&fot/nslook.png
 ## 🕵️ 1.3 Technology Fingerprinting
 
 ```bash
