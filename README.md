@@ -116,7 +116,7 @@ whois medirozahospital.com
 ```
 Whois enumeration was used to identify publicly available domain and registration information.
 
-rec&fot/whois.png
+![Whois Enumeration](rec&fot/whois.png)
 
 ## 🌎 1.2 DNS Reconnaissance
 
@@ -127,6 +127,8 @@ nslookup medirozahospital.com
 
 DNS reconnaissance was used to identify DNS records, name servers, resolved addresses, and other publicly exposed DNS information.
 
+![dig recon](rec&fot/dig.png)
+![Nslookup recon](rec&fot/nslook.png)
 ## 🕵️ 1.3 Technology Fingerprinting
 
 ```bash
@@ -135,6 +137,8 @@ whatweb https://medirozahospital.com
 
 WhatWeb was used to identify the web server, frameworks, CMS indicators, and HTTP headers exposed by the application.
 
+![whatweb finger](rec&fot/whatweb.png)
+
 ## 🧱 1.4 WAF Detection
 
 ```bash
@@ -142,6 +146,8 @@ wafw00f https://medirozahospital.com
 ```
 
 WAFW00F was used to identify whether a recognizable Web Application Firewall was protecting the target.
+
+![WAF Detection](rec&fot/waf.png)
 
 ---
 
@@ -152,6 +158,9 @@ curl -I https://medirozahospital.com
 ```
 
 `curl` was used to inspect the HTTP response headers and identify information exposed by the web server (status, server banner, content type, security headers).
+
+![Curl Inspection](rec&fot/curl.png)
+
 
 ---
 
