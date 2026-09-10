@@ -356,8 +356,8 @@ Detailed technical errors should remain in server-side logs.
 ```text
 screenshots/
 ├── dataSS/
-│   ├── db1.png
-│   ├── db2.png
+│   ├── dat.png
+│   ├── data.png
 │   ├── olddata.png
 │   └── patidata.png
 │
